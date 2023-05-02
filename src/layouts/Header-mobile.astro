@@ -1,0 +1,104 @@
+<header class="header">
+  <div class="header__logo__con">
+    <img class="header__image" src="/images/logo.webp" alt="logo" />
+  </div>
+  <div class="header__menu__con">
+    <img class="header__image" src="/images/Menu.svg" alt="Burger_menu_icon" />
+  </div>
+  <nav class="container">
+    <div class="header__logo__con2">
+      <img class="header__image" src="/images/logo.webp" alt="logo" />
+    </div>
+    <img class="close" src="/images/Close.png" alt="closingButton" />
+    <ul>
+      <a href="index.html"><button class="forsideMenuKnap">Forside</button></a>
+      <a href="../pages/hvadlaverman.html"><button>Hvad laver man</button></a>
+      <a href="../pages/praktisk-info.html"><button>Praktisk info</button></a>
+      <a href="../pages/jobmuligheder.html"><button>Job</button></a>
+      <a href="../pages/eksempler.html"><button>Eksempler</button></a>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /** HEADER **/
+
+  .container {
+  font-family: 'Exo', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #462069;
+  display: none;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__logo__con2 {
+  display: none;
+}
+
+.close {
+  height: 39px;
+  width: 39px;
+  margin-left: 90%;
+  cursor: pointer;
+}
+
+button {
+  text-align: center;
+  background-color: #583678;
+  color: #fd925c;
+  font-family: 'Exo', sans-serif;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px #000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: solid 2px #000;
+  width: 331px;
+  height: 94px;
+  font-weight: 700;
+}
+
+.header {  
+  background: linear-gradient(
+    90deg,
+    #edc4de 0%,
+    #ecc4de 41.17%,
+    #ecc2dd 48.05%,
+    #e9b7da 56.67%,
+    #e4a7d7 72.45%,
+    #e4a6d7 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+}
+
+.header__logo__con {
+  max-width: 100%;
+}
+
+.header__image {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+  .header {
+    display: none;
+  }
+}
+
+/** **/
+</style>

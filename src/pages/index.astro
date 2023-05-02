@@ -1,81 +1,406 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Footer from '../layouts/Footer.astro'
+import HeaderMobile from '../layouts/Header-mobile.astro'
+import HeaderDesktop from '../layouts/Header-desktop.astro'
+import '../styles/style.css'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey!</title>
+</head>
+<body>
+    <HeaderMobile/>
+  <header class="header__desktop">
+    <HeaderDesktop/>
+  </header>
+  <main>
+    <section class="main__section hero__section">
+      <picture class="hero__picture">
+        <source
+          class="section__image section__image--big"
+          media="(min-width:500px)"
+          srcset="/images/hero-big.webp"
+        />
+        <img class="section__image" src="images/hero.webp" alt="heroImg" />
+      </picture>
+      <h1 class="title">Byg din fremtid med kode</h1>
+      <h3 class="undertekst">Uddannelser i webudvikling til næste generations tech-talenter</h3>
+    </section>
+
+    <div id="wrapper">
+      <section class="main__section">
+        <div class="section__text__con">
+          <h2 class="section__title">Hvad er en webudvikler?</h2>
+          <p class="section__para">
+            En webudvikler er en professionel, der bygger og vedligeholder websites ved at skabe
+            både front-end og back-end teknologier for at skabe funktionelle weboplevelser. Dette
+            inkluderer arbejde med HTML, CSS, JavaScript, databaser, serveropsætning og sikkerhed
+            for at skabe effektive og brugervenlige websites.
+          </p>
+        </div>
+        <div class="section__image__con">
+          <img
+            class="Purple_man section__image"
+            src="images//purple-man.png"
+            alt="purple_white_web_designer"
+          />
+        </div>
+      </section>
+      <section class="main__section">
+        <div class="section__text__con">
+          <h2 class="section__title">Frontend-udviklerens rolle i webudvikling</h2>
+          <p class="section__para">
+            En frontend-udvikler er ansvarlig for at opbygge det visuelle udseende og interaktive
+            funktioner på en hjemmeside ved at bruge HTML, CSS og JavaScript til at oprette
+            brugergrænseflader, designe layout, tilføje animationer og interaktionseffekter samt
+            optimere hjemmesidens responsivitet på forskellige enheder.
+          </p>
+        </div>
+        <div class="section__image__con">
+          <img
+            class="section__image"
+            src="images//Dummy_PDSO_Create_hacking_room_a_men_inside_coding_on_laptop_bo_bd1259b3-a674-448b-8fe3-a9efb615a7bd(1) 1.png"
+            alt="coding_on_laptop"
+          />
+        </div>
+      </section>
+      <section class="main__section">
+        <div class="section__text__con">
+          <h2 class="section__title">Back-end Udviklerens rolle i webudvikling</h2>
+          <p class="section__para">
+            En backend-udvikler er ansvarlig for at håndtere server-side logik og databehandling,
+            såsom at håndtere brugerforespørgsler, behandle data fra databaser, udføre beregninger
+            og administrere brugeradgang ved hjælp af server-sprog som Python, Ruby, PHP eller Java.
+          </p>
+        </div>
+        <div class="section__image__con">
+          <img
+            class="section__image"
+            src="images//High_Server_room_icon_isometric_cables_tidy_purple_dark_blue_ef44027a-126e-4aa4-8563-ebf148205b10(1) 1.png"
+            alt="High_Server_room"
+          />
+        </div>
+      </section>
+      <section class="main__section section__sliders">
+        <h2 class="section__title">Eksempler på opgaver under uddannelsen</h2>
+        <div class="gallery-grid">
+          <div class="slider-grid">
+            <div id="back">
+              <img src="images/arrow-left.png" alt="leftArrow" />
+            </div>
+            <div class="slider">
+              <img class="slide slide--active" src="images/avis-site.webp" alt="b1" />
+              <img class="slide" src="images/film-site.webp" alt="b2" />
+              <img class="slide" src="images/spil-site.webp" alt="b3" />
+            </div>
+            <div id="next">
+              <img src="images/arrow-right.png" alt="rightArrow" />
+            </div>
+          </div>
+          <!-- slider-grid ends -->
+        </div>
+      </section>
+    </div>
+    <!--wrapper end-->
+  </main>
+  <footer>
+    <Footer/>
+  </footer>
+</body>
+</html>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+#wrapper {
+  max-width: 430px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.header__logo__con {
+  max-width: 100%;
+}
+
+.header__logo__con2 {
+  display: none;
+}
+
+.header__image {
+  width: 100%;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #462069;
+  display: none;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  
+  background-color: #583678;
+  color: #fd925c;
+  font-family: 'Exo', sans-serif;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px #000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: solid 2px #000;
+  width: 331px;
+  height: 94px;
+}
+
+button:active {
+  background-color: hsla(271, 38%, 34%, 0.4);
+  color: hsla(20, 98%, 68%, 0.4);
+}
+
+.close {
+  height: 39px;
+  width: 39px;
+  margin-left: 90%;
+  cursor: pointer;
+}
+.close:active {
+  background-color: red;
+}
+
+main {
+  
+  font-size: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #462069;
+  color: #da98f1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Exo', sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: #fd925c;
+}
+
+p {
+  font-family: 'JetBrains Mono', monospace;
+  color: #da98f1;
+}
+
+section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 2em 0 5em 0;
+}
+
+.hero__section {
+  border: none;
+  padding: 0;
+}
+
+.main__section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.section__text__con {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+.section__image__con {
+  max-width: 100%;
+}
+
+.section__image {
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  width: 90%;
+}
+
+.undertekst {
+  position: absolute;
+  top: 40%;
+  font-size: 18px;
+  width: 95%;
+  text-align: right;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+/** SLIDER **/
+
+.section__sliders {
+  flex-direction: column !important;
+  text-align: initial !important;
+}
+
+.slider-grid {
+  padding-top: 2em;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: 0.5em;
+}
+
+.slide {
+  display: none;
+}
+
+.slide--active {
+  display: block;
+}
+
+#back,
+#next {
+  align-self: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .title {
+    display: none;
+  }
+
+  .undertekst {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+
+  .main__section {
+    flex-direction: row;
+    text-align: start;
+  }
+
+  .main__section:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: end;
+  }
+
+  .section__text__con {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .header__desktop {
+    display: block;
+  }
+
+  .section__image__con {
+    flex: 3;
+    width: 100%;
+  }
+
+  #wrapper {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+  }
+
+  .section__title {
+    font-size: 50px;
+  }
+
+  .main__section {
+    font-size: 26px;
+  }
+
+  .slider-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .slide {
+    width: 100%;
+  }
+
+  .slider-grid {
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    gap: 0.5em;
+  }
+}
+
 </style>
+
+<script>
+  const slides = document.querySelectorAll('.slide')
+
+document.querySelector('#back').addEventListener('click', skiftSlide)
+document.querySelector('#next').addEventListener('click', skiftSlide)
+
+let current = 0
+function skiftSlide () {
+  slides[current].classList.remove('slide--active')
+
+  if (this.getAttribute('id') === 'next') {
+    current++
+    if (current > slides.length - 1) {
+      current = 0
+    }
+  } else {
+    current--
+    if (current < 0) {
+      current = slides.length - 1
+    }
+  }
+
+  slides[current].classList.add('slide--active')
+}
+
+</script>
+
+<script>
+const menuButton = document.querySelector('.header__menu__con');
+const closeButton = document.querySelector('.close');
+const container = document.querySelector('.container');
+
+
+menuButton.addEventListener('click', () => {
+  container.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+  container.style.display = 'none';
+});
+</script>
